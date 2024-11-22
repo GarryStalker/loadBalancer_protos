@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package loadBalancer;
+
+option go_package = "loadBalancer.v1;lbv1";
+
+service loadBalancer {
+    rpc Redirect(Request) returns (Response);
+}
+
+message Request{
+    string video = 1;
+}
+
+message Response{
+    string redirect = 1;
+}
